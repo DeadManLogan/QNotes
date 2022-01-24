@@ -12,9 +12,18 @@ code {
     monospace;
 }
 
+/* css grid will help use make the note components responsive */
+.notes-list{
+  display: grid;
+  /* grid gap gives spacing between components */
+  grid-gap: 1rem;
+  /* auto-fit resizes the column size based on minmax. fr is fractional unit which means.
+  the space that is available */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
 .note{
   background-color: #fef68a;
-  margin-bottom: 10px;
   border-radius: 10px;
   padding: 1rem;
   min-height: 170px;

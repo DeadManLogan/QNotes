@@ -4,7 +4,7 @@ import Note from './Note';
 // modify them using css
 const NotesList = () => {
     return (
-        <div className='notes-List'>
+        <div className='notes-list'>
             <Note />
             <Note />
             <Note />
