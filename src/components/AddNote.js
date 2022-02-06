@@ -11,7 +11,12 @@ const AddNote = ({handleAddNote}) => {
 
     // we save the text to the new note
     const handleSaveClick = () => {
-        handleAddNote(noteText);
+        // we check if the input is blank space. .trim() deletes the blank space before and after input
+        if(noteText.trim().length > 0){
+            handleAddNote(noteText);
+            // sets the note text of the new note to blank. Unfortunately doesn't work
+            setNoteText('');
+        }
     };
 
     return (
