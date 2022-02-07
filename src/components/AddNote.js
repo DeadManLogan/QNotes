@@ -3,10 +3,13 @@ import { useState } from "react";
 const AddNote = ({handleAddNote}) => {
     // we want to store what the user types. We start with empty input.
     const [noteText, setNoteText] = useState("");
+    const characterLimit = 2000;
 
-    // stores the input of the user
+    // stores the input of the user. we also check the input limit.
     const handleChange = (event) => {
-        setNoteText(event.target.value);
+        if(characterLimit - event.target.value.length >= 0){
+            setNoteText(event.target.value);
+        }
     };
 
     // we save the text to the new note
@@ -30,7 +33,7 @@ const AddNote = ({handleAddNote}) => {
             ></textarea>
             {/* footer div that show remaining words and save button */}
             <div className="note-footer">
-                <small>200 Remaining</small>
+                <small>{characterLimit - noteText.length} Remaining</small>
                 <button className="save" onClick={handleSaveClick}>Save</button>
             </div>
         </div>
